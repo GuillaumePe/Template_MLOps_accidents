@@ -20,6 +20,6 @@ rf_classifier = ensemble.HistGradientBoostingClassifier()
 rf_classifier.fit(X_train, y_train)
 
 #--Save the trained model to a file
-model_filename = './models/trained_model.joblib'
+model_filename = 'accidents/Template_MLOps_accidents/models/trained_model.joblib'
 joblib.dump(rf_classifier, model_filename)
 print("Model trained and saved successfully.")
