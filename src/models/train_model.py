@@ -14,12 +14,12 @@ y_test = pd.read_csv('data/preprocessed/y_test.csv')
 y_train = np.ravel(y_train)
 y_test = np.ravel(y_test)
 
-rf_classifier = ensemble.HistGradientBoostingClassifier()
+rf_classifier = ensemble.HistGradientBoostingClassifier(max_iter=200, max_leaf_nodes=5)
 
 #--Train the model
 rf_classifier.fit(X_train, y_train)
 
 #--Save the trained model to a file
-model_filename = 'accidents/Template_MLOps_accidents/models/trained_model.joblib'
+model_filename = './models/trained_model.joblib'
 joblib.dump(rf_classifier, model_filename)
 print("Model trained and saved successfully.")
